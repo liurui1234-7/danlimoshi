@@ -7,16 +7,16 @@ import user.*;
 public class Bank {
 int account;
 private static User user;
-public static void main(String[] args) throws FileNotFoundException{
+public static void main(String[] args) throws IOException{
 	Bank b = new Bank();
 	b.login();
 	b.operate();
 }
-	public void operate(){
+	public void operate() throws IOException{
 	Bank b = new Bank();
 	while(true){
 		System.out.println("请输入您要进行的操作，按回车结束");
-		System.out.println("存款，1"+"\t"+"取款,2"+"\t"+"余额，3"+"\t"+"退出,0");
+		System.out.println("存款，1"+"\t"+"取款,2"+"\t"+"余额，3"+"\t"+"注册，4"+"\t"+"存盘，5"+"\t"+"退出,0");
 		Scanner in = new Scanner(System.in);//System.in作为参数传递给Scanner的构造函数，使Scanner用键盘作为输入，然后用new在内存中实例化一个Scanner出来，使得其它变量能调用这块内存区
 		String s = in.nextLine();//nextLine(); 这个函数会直接输出你输入的内容，即使你什么都没输入直接回车他也会输出。
 		if("1".equals(s)||"2".equals(s)){
@@ -38,11 +38,16 @@ public static void main(String[] args) throws FileNotFoundException{
 			}
 		}else if("3".equals(s)){
 			b.show();
-		}else if("0".equals(s)){
+		}else if("4".equals(s)) {
+			b.register();
+		}else if("5".equals(s)) {
+			b.save();
+		}
+		else if("0".equals(s)){
 			System.out.println("退出系统！");
 			return;
 		}else{
-			System.out.println("请输入0~3之间的数字选择相关操作");
+			System.out.println("请输入0~4之间的数字选择相关操作");
 		}
 	}
 	}

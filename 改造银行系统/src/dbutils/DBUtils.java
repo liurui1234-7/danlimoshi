@@ -8,7 +8,7 @@ public class DBUtils {
 private static DBUtils instance = null;
 private HashMap<String,User> users = new HashMap<String,User>();
 private DBUtils() throws FileNotFoundException{
-	getUsersFromInputStream("user.dat");
+	getUsersFromInputStream("user.txt");
 }
 private void getUsersFromInputStream(String isName) throws FileNotFoundException {
 	
@@ -86,7 +86,7 @@ public void update() throws IOException {
 				+u.getAccount()+"\r\n";
 		uStringBuffer.append(uString);		
 	}
-	putUsersToFile(uStringBuffer.toString(),"user.dat");
+	putUsersToFile(uStringBuffer.toString(),"user.txt");
 }
 private void putUsersToFile(String uString,String osName) throws IOException {
 	
