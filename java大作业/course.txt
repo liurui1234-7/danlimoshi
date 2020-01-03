@@ -1,0 +1,5 @@
+001,shuxue,98
+002,yuwen,808
+004,wuli,9098
+005,yingyu,90
+007,yingyu,80
